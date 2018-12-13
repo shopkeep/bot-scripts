@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`convertReadmeToHelp when able to get readme and able to parse readme provides an help message 1`] = `
+"Here's a list of available commands :information_desk_person: 
+
+:point_right: _*Hello*_
+Some details about hello command
+
+:point_left: _*Goodbye*_
+Some details bout the goodbye command"
+`;

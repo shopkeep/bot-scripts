@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  service: &default
+    build:
+      context: .
+    command: npm start
+    ports:
+      - 9000:9000
+    environment:
+      - SLACK_BOT_TOKEN
+      - HEALTH_CHECK_PORT
+      - LOGGING_LEVEL
+      - CAKE_IS_A_LIE
+
+  test:
+    build:
+      context: .
+    command: sh -c "npm run lint && npm test"

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get-user when called and user info is available provides a user object 1`] = `
+Object {
+  "avatar": "http://www.example.com/avatars/joe_bloggs.jpg",
+  "email": "joe.bloggs@example.com",
+  "handle": "Joe",
+  "id": "123",
+  "name": "Joe Bloggs",
+  "tz": "America/New_York",
+}
+`;

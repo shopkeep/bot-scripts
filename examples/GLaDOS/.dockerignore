@@ -1,0 +1,9 @@
+# Ignore all files by default
+*
+
+# White list only the required files
+!src/
+!.npmrc
+!package-lock.json
+!package.json
+!README.md

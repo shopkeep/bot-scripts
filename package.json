@@ -1,0 +1,32 @@
+{
+  "name": "@shopkeep/bot-scripts",
+  "version": "1.1.0",
+  "description": "Common functionality for botkit slack bots",
+  "bin": {
+    "bot-scripts": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "jest --env node --setupTestFrameworkScriptFile ./scripts/test/mock-logger.js",
+    "lint": "eslint . --config=./scripts/lint/eslintrc.json"
+  },
+  "dependencies": {
+    "botkit": "^0.6.21",
+    "bristol": "^0.4.0",
+    "cross-spawn": "^6.0.5",
+    "dotenv": "^6.1.0",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.0.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shopkeep/bot-scripts"
+  },
+  "author": "ShopKeep <developers@shopkeep.com> (http://shopkeep.com/)",
+  "license": "MIT"
+}

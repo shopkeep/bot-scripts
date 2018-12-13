@@ -1,0 +1,14 @@
+{
+  "name": "basic-example",
+  "version": "1.0.0",
+  "description": "Basic example bot for bot-scripts",
+  "scripts": {
+    "start": "bot-scripts start",
+    "test": "bot-scripts test",
+    "lint": "bot-scripts lint"
+  },
+  "dependencies": {
+    "@shopkeep/bot-scripts": "^1.1.0"
+  },
+  "private": true
+}

@@ -1,11 +1,10 @@
-FROM node:10.7-alpine
+FROM node:11-alpine
 
 ENV NPM_CONFIG_LOGLEVEL warn
 
-COPY package.json package-lock.json .npmrc /basic-example/
-WORKDIR /basic-example/
+WORKDIR /usr/src/basic-example
+COPY package.json package-lock.json ./
+
 RUN npm install
 
-COPY . /basic-example/
-
-RUN rm -f /basic-example/.npmrc
+COPY . .

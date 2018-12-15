@@ -2,8 +2,9 @@ FROM node:11-alpine
 
 ENV NPM_CONFIG_LOGLEVEL warn
 
-COPY package.json package-lock.json /bot-scripts/
-WORKDIR /bot-scripts/
+WORKDIR /usr/src/bot-scripts
+COPY package.json package-lock.json ./
+
 RUN npm install
 
-COPY . /bot-scripts/
+COPY . .

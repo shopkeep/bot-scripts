@@ -1,11 +1,10 @@
-FROM node:10.7-alpine
+FROM node:11-alpine
 
 ENV NPM_CONFIG_LOGLEVEL warn
 
-COPY package.json package-lock.json .npmrc /aperture-science/
-WORKDIR /aperture-science/
+WORKDIR /usr/src/aperture-science
+COPY package.json package-lock.json ./
+
 RUN npm install
 
-COPY . /aperture-science/
-
-RUN rm -f /aperture-science/.npmrc
+COPY . .

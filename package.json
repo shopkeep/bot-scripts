@@ -10,7 +10,7 @@
     "lint": "eslint . --config=./scripts/lint/eslintrc.json"
   },
   "dependencies": {
-    "botkit": "^0.6.21",
+    "botkit": "^0.7.0",
     "bristol": "^0.4.0",
     "cross-spawn": "^6.0.5",
     "dotenv": "^6.1.0",

@@ -14,7 +14,7 @@ jest.run(
     args,
     "--env",
     "node",
-    "--setupTestFrameworkScriptFile",
+    "--setupFilesAfterEnv",
     mockLogger
   )
 );

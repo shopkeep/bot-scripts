@@ -3,7 +3,7 @@ process.on("unhandledRejection", function(err) {
 });
 
 const path = require("path");
-const { getBotDirectory } = require("../utils");
+const { getBotDirectory } = require("../shared");
 const botDirectory = getBotDirectory();
 
 const botPath = path.resolve(botDirectory, "./src/index.js");

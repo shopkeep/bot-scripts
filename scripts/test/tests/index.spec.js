@@ -9,7 +9,7 @@ jest.mock("../../shared", () =>
   })
 );
 
-describe("lint script", function() {
+describe("test script", function() {
   beforeEach(function() {
     jest.clearAllMocks();
     jest.resetModules();
@@ -21,13 +21,15 @@ describe("lint script", function() {
       require("../"); // eslint-disable-line global-require
     });
 
-    it("calls eslint with the correct arguments", function() {
+    it("calls jest with the correct arguments", function() {
       expect(mockSetupScript.mock.calls.length).toBe(1);
       expect(mockSetupScript.mock.calls[0]).toEqual([
         [
-          expect.stringContaining("/bot-scripts/foo/src"),
-          "--config",
-          expect.stringContaining("/bot-scripts/scripts/lint/eslintrc.json")
+          "foo",
+          "--env",
+          "node",
+          "--setupFilesAfterEnv",
+          expect.stringContaining("/bot-scripts/scripts/test/mock-logger.js")
         ]
       ]);
     });
@@ -35,18 +37,20 @@ describe("lint script", function() {
 
   describe("when additional flag argument passed", function() {
     beforeEach(function() {
-      mockGetArgs.mockReturnValue(["--fix"]);
+      mockGetArgs.mockReturnValue(["--watch"]);
       require("../"); // eslint-disable-line global-require
     });
 
-    it("calls eslint with the correct arguments", function() {
+    it("calls jest with the correct arguments", function() {
       expect(mockSetupScript.mock.calls.length).toBe(1);
       expect(mockSetupScript.mock.calls[0]).toEqual([
         [
-          expect.stringContaining("/bot-scripts/foo/src"),
-          "--config",
-          expect.stringContaining("/bot-scripts/scripts/lint/eslintrc.json"),
-          "--fix"
+          "foo",
+          "--env",
+          "node",
+          "--setupFilesAfterEnv",
+          expect.stringContaining("/bot-scripts/scripts/test/mock-logger.js"),
+          "--watch"
         ]
       ]);
     });
@@ -54,17 +58,19 @@ describe("lint script", function() {
 
   describe("when path argument passed", function() {
     beforeEach(function() {
-      mockGetArgs.mockReturnValue(["/new/lint/path"]);
+      mockGetArgs.mockReturnValue(["/new/test/path"]);
       require("../"); // eslint-disable-line global-require
     });
 
-    it("calls eslint with the correct arguments", function() {
+    it("calls jest with the correct arguments", function() {
       expect(mockSetupScript.mock.calls.length).toBe(1);
       expect(mockSetupScript.mock.calls[0]).toEqual([
         [
-          "/new/lint/path",
-          "--config",
-          expect.stringContaining("/bot-scripts/scripts/lint/eslintrc.json")
+          "/new/test/path",
+          "--env",
+          "node",
+          "--setupFilesAfterEnv",
+          expect.stringContaining("/bot-scripts/scripts/test/mock-logger.js")
         ]
       ]);
     });
@@ -72,18 +78,20 @@ describe("lint script", function() {
 
   describe("when mixture of arguments passed", function() {
     beforeEach(function() {
-      mockGetArgs.mockReturnValue(["/new/lint/path", "--fix"]);
+      mockGetArgs.mockReturnValue(["/new/test/path", "--watch"]);
       require("../"); // eslint-disable-line global-require
     });
 
-    it("calls eslint with the correct arguments", function() {
+    it("calls jest with the correct arguments", function() {
       expect(mockSetupScript.mock.calls.length).toBe(1);
       expect(mockSetupScript.mock.calls[0]).toEqual([
         [
-          "/new/lint/path",
-          "--config",
-          expect.stringContaining("/bot-scripts/scripts/lint/eslintrc.json"),
-          "--fix"
+          "/new/test/path",
+          "--env",
+          "node",
+          "--setupFilesAfterEnv",
+          expect.stringContaining("/bot-scripts/scripts/test/mock-logger.js"),
+          "--watch"
         ]
       ]);
     });

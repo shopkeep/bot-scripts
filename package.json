@@ -6,8 +6,8 @@
     "bot-scripts": "./bin/index.js"
   },
   "scripts": {
-    "test": "jest --env node --setupFilesAfterEnv ./scripts/test/mock-logger.js",
-    "lint": "eslint . --config=./scripts/lint/eslintrc.json"
+    "test": "node ./scripts/test",
+    "lint": "node ./scripts/lint ."
   },
   "dependencies": {
     "botkit": "^0.7.0",

@@ -51,9 +51,7 @@ const setupCommands = function({ listen }) {
 
       logger.debug("Cake is promised");
       updateMessage(
-        `<@${
-          message.user
-        }> Cake, and grief counseling, will be available at the conclusion of the test. :cake:`
+        `<@${message.user}> Cake, and grief counseling, will be available at the conclusion of the test. :cake:`
       );
     });
   });

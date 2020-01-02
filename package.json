@@ -10,7 +10,7 @@
     "lint": "node ./scripts/lint ."
   },
   "dependencies": {
-    "botkit": "^0.7.0",
+    "botkit": "^4.6.1",
     "bristol": "^0.4.0",
     "cross-spawn": "^6.0.5",
     "dotenv": "^6.1.0",

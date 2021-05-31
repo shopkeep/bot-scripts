@@ -20,7 +20,7 @@
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jest": "^23.13.2",
     "eslint-plugin-prettier": "^3.1.4",
-    "jest": "^24.1.0",
+    "jest": "^27.0.3",
     "prettier": "^1.15.3"
   },
   "repository": {

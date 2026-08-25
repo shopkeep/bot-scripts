@@ -8,7 +8,7 @@
     "lint": "bot-scripts lint"
   },
   "dependencies": {
-    "@shopkeep/bot-scripts": "^1.1.0"
+    "@shopkeep/bot-scripts": "^1.2.0"
   },
   "private": true
 }
